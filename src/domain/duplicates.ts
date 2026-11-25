@@ -12,16 +12,18 @@ export function findSimilar(complaints: Complaint[], category: CategoryId, locat
 
 /** Up to `limit` distinct locations used before, most used first. */
 export function locationSuggestions(complaints: Complaint[], limit = 5): string[] {
-  const counts = new Map<string, { label: string; count: number; last: string }>();
+  // Label is the first spelling used at that place; recency breaks ties in the ordering.
+  const counts = new Map<string, { label: string; count: number; last: string; first: string }>();
   for (const c of complaints) {
     const entry = counts.get(c.locationKey);
     if (entry) {
       entry.count += 1;
-      if (c.createdAt > entry.last) {
-        entry.last = c.createdAt;
+      if (c.createdAt > entry.last) entry.last = c.createdAt;
+      if (c.createdAt < entry.first) {
+        entry.first = c.createdAt;
         entry.label = c.location;
       }
-    } else counts.set(c.locationKey, { label: c.location, count: 1, last: c.createdAt });
+    } else counts.set(c.locationKey, { label: c.location, count: 1, last: c.createdAt, first: c.createdAt });
   }
   return [...counts.values()]
     .sort((a, b) => b.count - a.count || b.last.localeCompare(a.last))

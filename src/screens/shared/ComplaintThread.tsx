@@ -87,8 +87,11 @@ function Thread({ complaint: c }: { complaint: Complaint }) {
 
   const runAction = (a: Action) => {
     setMenuOpen(false);
-    if (a === 'resolve') setResolving(true);
-    else setSheet(a === 'severity' ? 'status' : a);
+    // Wait for the menu sheet to finish closing. iOS cannot present a modal while another is dismissing.
+    setTimeout(() => {
+      if (a === 'resolve') setResolving(true);
+      else setSheet(a === 'severity' ? 'status' : a);
+    }, 350);
   };
 
   const [busyResolve, setBusyResolve] = useState(false);

@@ -88,7 +88,9 @@ function HotspotRow({ h, onPress }: { h: Hotspot; onPress: () => void }) {
             );
           })}
         </View>
-        <SeverityBadge severity={h.highestSeverity} />
+        <View style={{ flexDirection: 'row' }}>
+          <SeverityBadge severity={h.highestSeverity} />
+        </View>
       </View>
       <Feather name="chevron-right" size={22} color={colors.textMuted} />
     </Pressable>

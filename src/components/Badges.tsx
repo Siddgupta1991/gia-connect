@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
   pill: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
     gap: 6,
     paddingHorizontal: 10,
     paddingVertical: 3,

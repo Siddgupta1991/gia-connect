@@ -40,7 +40,7 @@ export function buildSeed(nowMs: number = Date.now()): Database {
       participantIds: ['u_member', 'u_admin', 'u_moderator'], createdAt: ago(72), updatedAt: ago(3),
     }),
     base({
-      id: 'c_102', number: 102, category: 'road', subCategory: 'Pothole', location: 'gate 2  main road',
+      id: 'c_102', number: 102, category: 'road', subCategory: 'Pothole', location: 'Gate 2 main road',
       description: 'Another deep pothole about 50 metres inside Gate 2, near the tea stall. Fills with water in rain.',
       severity: null, status: 'open', createdBy: 'u_member2',
       participantIds: ['u_member2'], createdAt: ago(20), updatedAt: ago(20),
@@ -129,7 +129,7 @@ export function buildSeed(nowMs: number = Date.now()): Database {
 
   const notifications: AppNotification[] = [
     note('u_admin', 'complaint_raised', 'New complaint #101', 'Anil Sharma reported Pothole at Gate 2 Main Road', 'c_101', 72, true),
-    note('u_admin', 'complaint_raised', 'New complaint #102', 'Sunita Verma reported Pothole at gate 2 main road', 'c_102', 20),
+    note('u_admin', 'complaint_raised', 'New complaint #102', 'Sunita Verma reported Pothole at Gate 2 main road', 'c_102', 20),
     note('u_admin', 'complaint_raised', 'New complaint #103', 'Imran Khan reported Pipe leakage at Near Water Tank', 'c_103', 30, true),
     note('u_admin', 'complaint_raised', 'New complaint #104', 'Deepak Joshi reported Blocking a gate at Near water tank', 'c_104', 10),
     note('u_admin', 'complaint_raised', 'New complaint #105', 'Anil Sharma reported On the road at Sector B Lane 4', 'c_105', 9),

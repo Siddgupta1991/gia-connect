@@ -81,8 +81,8 @@ function AdminTabs() {
   const { unreadCount } = useData();
   return (
     <Tab.Navigator screenOptions={tabOptions}>
-      <Tab.Screen name="Dashboard" component={DashboardScreen} options={{ tabBarIcon: tabIcon('grid') }} />
-      <Tab.Screen name="Complaints" component={AllComplaintsScreen} options={{ tabBarIcon: tabIcon('list') }} />
+      <Tab.Screen name="Dashboard" component={DashboardScreen} options={{ tabBarIcon: tabIcon('grid'), tabBarLabel: 'Home', tabBarAccessibilityLabel: 'Dashboard' }} />
+      <Tab.Screen name="Complaints" component={AllComplaintsScreen} options={{ tabBarIcon: tabIcon('list'), tabBarLabel: 'Issues', tabBarAccessibilityLabel: 'All complaints' }} />
       <Tab.Screen name="Hotspots" component={HotspotsScreen} options={{ tabBarIcon: tabIcon('map-pin') }} />
       <Tab.Screen name="Alerts" component={AlertsScreen} options={{ tabBarIcon: tabIcon('bell'), tabBarBadge: unreadCount || undefined }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarIcon: tabIcon('user') }} />

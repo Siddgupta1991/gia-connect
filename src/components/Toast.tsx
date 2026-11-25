@@ -52,7 +52,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           pointerEvents="none"
           accessibilityLiveRegion="polite"
           accessibilityRole="alert"
-          style={[styles.toast, { top: insets.top + 12, opacity, backgroundColor: bg }]}
+          style={[styles.toast, { bottom: insets.bottom + 88, opacity, backgroundColor: bg }]}
         >
           <Feather name={icon} size={20} color="#fff" />
           <AppText color="#fff" style={{ flex: 1 }} variant="bodyStrong">
